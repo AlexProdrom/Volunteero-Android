@@ -23,6 +23,7 @@ import android.widget.TextView
 
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
+import com.alexprodrom.volunteero.R.id.password
 
 import kotlinx.android.synthetic.main.activity_login.*
 
