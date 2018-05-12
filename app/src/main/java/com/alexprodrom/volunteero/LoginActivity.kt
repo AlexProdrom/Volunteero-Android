@@ -23,6 +23,7 @@ import android.widget.TextView
 
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
+import android.content.Intent
 import com.alexprodrom.volunteero.R.id.password
 
 import kotlinx.android.synthetic.main.activity_login.*
@@ -96,6 +97,10 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
      * errors are presented and no actual login attempt is made.
      */
     private fun attemptLogin() {
+        val intent = Intent(this, EventsActivity::class.java)
+        startActivity(intent)
+
+        /*
         if (mAuthTask != null) {
             return
         }
@@ -140,6 +145,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
             mAuthTask = UserLoginTask(emailStr, passwordStr)
             mAuthTask!!.execute(null as Void?)
         }
+        */
     }
 
     private fun isEmailValid(email: String): Boolean {
