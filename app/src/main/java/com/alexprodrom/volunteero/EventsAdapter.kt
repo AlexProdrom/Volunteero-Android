@@ -31,7 +31,7 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
             RecyclerView.ViewHolder(parent.inflate(R.layout.event_card_view)) {
 
         fun bind(item: Event) = with(itemView) {
-            tv_event_name.text = item.name
+            tv_event_name.text = item.title
             tv_event_description.text = item.description
             tv_event_participants.text = item.participants.toString()
         }
@@ -42,4 +42,3 @@ fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean = false): View {
     return LayoutInflater.from(context).inflate(layoutId, this, attachToRoot)
 }
 
-data class Event(val name: String, val description: String, val participants: Int)
