@@ -11,6 +11,7 @@ class EventsActivity : AppCompatActivity() {
         rv_events
         rv_events.setHasFixedSize(true)
         rv_events.layoutManager = LinearLayoutManager(this)
+        rv_events.isNestedScrollingEnabled = false
         rv_events
     }
 
