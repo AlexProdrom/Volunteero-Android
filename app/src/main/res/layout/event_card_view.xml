@@ -23,7 +23,7 @@
                 android:layout_height="160dp"
                 android:background="@color/colorCardViewBackground"
                 android:contentDescription="@string/cv_image_description"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/ic_volunteero_text_logo"
                 android:scaleType="centerCrop" />
 
             <LinearLayout
