@@ -2,6 +2,7 @@ package com.alexprodrom.volunteero
 
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
+import com.alexprodrom.volunteero.model.Event
 import com.alexprodrom.volunteero.utils.inflate
 import kotlinx.android.synthetic.main.event_card_view.view.*
 import kotlin.collections.ArrayList
