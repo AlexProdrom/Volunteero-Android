@@ -15,10 +15,10 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
     }
 
     init {
-        items.add(Event("Panda saving", "Let's save these pandas!", 5, "10.05.2018"))
-        items.add(Event("Tigers saving", "Let's save these tigers!", 2, "12.10.2018"))
-        items.add(Event("Romania saving", "Let's save these romanians!", 0, "29.02.2018"))
-        items.add(Event("Time saving", "Let's save these minutes!", 1000000, "03.04.2019"))
+        //items.add(Event("Panda saving", "Let's save these pandas!", 5, "10.05.2018"))
+        //items.add(Event("Tigers saving", "Let's save these tigers!", 2, "12.10.2018"))
+        //items.add(Event("Romania saving", "Let's save these romanians!", 0, "29.02.2018"))
+        //items.add(Event("Time saving", "Let's save these minutes!", 1000000, "03.04.2019"))
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder = EventViewHolder(parent)
@@ -31,9 +31,9 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
             RecyclerView.ViewHolder(parent.inflate(R.layout.event_card_view)) {
 
         fun bind(item: Event) = with(itemView) {
-            tv_event_title.text = item.title
+            //tv_event_title.text = item.title
             tv_event_description.text = item.description
-            tv_event_date.text = item.date
+            //tv_event_date.text = item.date
         }
     }
 }

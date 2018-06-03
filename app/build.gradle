@@ -31,6 +31,10 @@ dependencies {
     // Android KTx
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    // Consuming API libraries
+    implementation "com.squareup.retrofit2:retrofit:2.3.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.0.0"
+
     // Android Architecture Components
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation "android.arch.lifecycle:viewmodel:1.1.1" // use -ktx for Kotlin
