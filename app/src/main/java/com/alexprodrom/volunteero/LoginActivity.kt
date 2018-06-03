@@ -15,7 +15,6 @@ import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.provider.ContactsContract
-import android.text.TextUtils
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.ArrayAdapter
@@ -25,8 +24,6 @@ import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
 import com.alexprodrom.volunteero.R.id.password
-
-import kotlinx.android.synthetic.main.activity_login.*
 
 /**
  * A login screen that offers login via email/password.
@@ -97,7 +94,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
      * errors are presented and no actual login attempt is made.
      */
     private fun attemptLogin() {
-        val intent = Intent(this, EventsActivity::class.java)
+        val intent = Intent(this, EventActivity::class.java)
         startActivity(intent)
 
         /*

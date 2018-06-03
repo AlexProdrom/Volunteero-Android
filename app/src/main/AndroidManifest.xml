@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EventsActivity"
+            android:name=".EventActivity"
             android:label="Events" />
     </application>
 
