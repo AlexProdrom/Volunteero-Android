@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'com.jakewharton.hugo'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -17,18 +19,26 @@ android {
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
+    dataBinding {
+        enabled = true
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    // Kotlin
-    // Android KTx
+    // Kotlin & Android
+    kapt 'com.android.databinding:compiler:3.1.2'
+    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha01'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Consuming API libraries
@@ -44,7 +54,7 @@ dependencies {
     annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
 
     // Android Support Libraries
-    implementation'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
     implementation "com.android.support:recyclerview-v7:27.1.1"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
