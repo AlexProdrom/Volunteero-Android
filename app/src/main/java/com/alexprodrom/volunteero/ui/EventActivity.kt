@@ -23,7 +23,7 @@ class EventActivity : AppCompatActivity() {
 
         supportFragmentManager
                 .beginTransaction()
-                .addToBackStack("product")
+                .addToBackStack("event")
                 .replace(R.id.fragment_container_event,
                         productFragment, null).commit()
     }
