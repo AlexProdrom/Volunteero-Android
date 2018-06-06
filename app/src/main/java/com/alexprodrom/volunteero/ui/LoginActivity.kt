@@ -284,6 +284,11 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         }
     }
 
+    fun openRegistrationPage(v: View) {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://volunteero-front-end-base.herokuapp.com/home/events"))
+        startActivity(browserIntent)
+    }
+
     companion object {
 
         /**

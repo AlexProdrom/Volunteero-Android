@@ -14,7 +14,7 @@ import com.alexprodrom.volunteero.databinding.EventListFragmentBinding
 import kotlinx.android.synthetic.main.event_list_fragment.*
 
 
-class EventListFragment: Fragment() {
+class EventListFragment : Fragment() {
 
     private var mBinding: EventListFragmentBinding? = null
 
@@ -24,17 +24,22 @@ class EventListFragment: Fragment() {
         rv_events.isNestedScrollingEnabled = false
         rv_events
     }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.event_list_fragment, container, false)
-        rvEvents.adapter = EventsAdapter()
-
+        mBinding?.isLoading = false
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        mBinding?.isLoading = false
+        //viewmodel
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        rvEvents.adapter = EventsAdapter()
     }
 }
 

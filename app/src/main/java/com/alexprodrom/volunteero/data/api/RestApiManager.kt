@@ -19,7 +19,5 @@ class RestApiManager {
         redditApi = retrofit.create(VolunteeroApi::class.java)
     }
 
-    fun getNews(): Call<List<Event>> {
-        return redditApi.getEvents()
-    }
+    fun getNews(): Call<List<Event>> = redditApi.getEvents()
 }

@@ -102,5 +102,6 @@
         android:layout_height="wrap_content"
         android:text="@string/no_account"
         android:gravity="center|bottom"
+        android:onClick="openRegistrationPage"
         android:textColor="@android:color/white"/>
 </LinearLayout>
