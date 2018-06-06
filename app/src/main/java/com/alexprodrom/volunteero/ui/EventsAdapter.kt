@@ -13,6 +13,12 @@ class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
 
     val items = ArrayList<Event>()
 
+    fun addEvents(events: List<Event>) {
+        items.clear()
+        items.addAll(events)
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder = EventViewHolder(parent)
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) = holder.bind(items[position])

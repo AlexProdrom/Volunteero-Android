@@ -1,5 +1,7 @@
 package com.alexprodrom.volunteero.viewmodel
 
-class EventListViewModel {
+import android.arch.lifecycle.ViewModel
+
+class EventListViewModel: ViewModel() {
 
 }

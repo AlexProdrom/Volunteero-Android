@@ -1,5 +1,6 @@
 package com.alexprodrom.volunteero.ui
 
+import android.arch.lifecycle.ViewModelProviders
 import android.databinding.BindingAdapter
 import android.databinding.DataBindingUtil
 import android.os.Bundle
@@ -32,28 +33,22 @@ class EventListFragment : Fragment() {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        //viewmodel
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvEvents.adapter = EventsAdapter()
+        val viewModel = ViewModelProviders.of(this).get(EventListViewModel::class.java)
+        subscribeUi(viewModel)
     }
 
     private fun subscribeUi(viewModel: EventListViewModel) {
         // Update the list when the data changes
-        viewModel.getProducts().observe(this, { myProducts ->
-            if (myProducts != null) {
-                mBinding.setIsLoading(false)
-                mProductAdapter.setProductList(myProducts)
+        viewModel.getProducts().observe(this, { events ->
+            if (events != null) {
+                mBinding?.setIsLoading(false)
+                (rvEvents.adapter as EventsAdapter).addEvents(events)
             } else {
-                mBinding.setIsLoading(true)
+                mBinding?.setIsLoading(true)
             }
-            // espresso does not know how to wait for data binding's loop so we execute changes
-            // sync.
             mBinding.executePendingBindings()
         })
     }
