@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.event_card_view.view.*
 import kotlin.collections.ArrayList
 
 
-class EventsAdapter : RecyclerView.Adapter<EventsAdapter.EventViewHolder>() {
+class EventAdapter : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     val items = ArrayList<Event>()
 
