@@ -29,9 +29,9 @@ class EventAdapter : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
             RecyclerView.ViewHolder(parent.inflate(R.layout.event_card_view)) {
 
         fun bind(item: Event) = with(itemView) {
-            //tv_event_title.text = item.title
-            tv_event_description.text = item.description
-            //tv_event_date.text = item.date
+            tv_event_title.text = item.name
+            tv_event_description.text = item.category
+            tv_event_date.text = item.start
         }
     }
 }

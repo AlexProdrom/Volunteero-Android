@@ -29,14 +29,16 @@ class EventListFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        mBinding = DataBindingUtil.inflate(inflater, R.layout.event_list_fragment, container, false)
-        mBinding?.isLoading = false
-        return super.onCreateView(inflater, container, savedInstanceState)
+        val binding: EventListFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.event_list_fragment, container, false)
+        mBinding = binding
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvEvents.adapter = EventAdapter()
+
+        // TODO: find solution for the constructor injection
         val viewModel = ViewModelProviders.of(this).get(EventListViewModel::class.java)
         subscribeUi(viewModel)
     }
