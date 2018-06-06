@@ -26,6 +26,5 @@
                 app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                 app:visibleGone="@{!isLoading}" />
         </ScrollView>
-
     </android.support.constraint.ConstraintLayout>
 </layout>

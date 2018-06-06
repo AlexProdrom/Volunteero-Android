@@ -11,8 +11,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ui.LoginActivity"
-    android:weightSum="5">
+    android:weightSum="5"
+    tools:context=".ui.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -26,9 +26,8 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="4.5"
-        >
+        android:layout_height="0dp"
+        android:layout_weight="4.5">
 
 
         <LinearLayout
@@ -100,8 +99,8 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/no_account"
         android:gravity="center|bottom"
         android:onClick="openRegistrationPage"
-        android:textColor="@android:color/white"/>
+        android:text="@string/no_account"
+        android:textColor="@android:color/white" />
 </LinearLayout>

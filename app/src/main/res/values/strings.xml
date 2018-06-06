@@ -10,13 +10,16 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
     <string name="no_account">No account yet? Sign up!</string>
 
     <!-- Strings related to cardview" -->
     <string name="cv_image_description">FutureEventImage</string>
     <string name="action_view">View</string>
     <string name="rv_content_description">List of events that you are volunteering to.</string>
+    <string name="tv_title">Title</string>
+    <string name="tv_description">Description</string>
+    <string name="tv_date">Date</string>
+
+    <!-- Strings related to -->
 </resources>

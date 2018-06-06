@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.alexprodrom.volunteero.R
 import com.alexprodrom.volunteero.databinding.EventListFragmentBinding
+import com.alexprodrom.volunteero.viewmodel.EventListViewModel
 import kotlinx.android.synthetic.main.event_list_fragment.*
 
 
@@ -40,6 +41,21 @@ class EventListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvEvents.adapter = EventsAdapter()
+    }
+
+    private fun subscribeUi(viewModel: EventListViewModel) {
+        // Update the list when the data changes
+        viewModel.getProducts().observe(this, { myProducts ->
+            if (myProducts != null) {
+                mBinding.setIsLoading(false)
+                mProductAdapter.setProductList(myProducts)
+            } else {
+                mBinding.setIsLoading(true)
+            }
+            // espresso does not know how to wait for data binding's loop so we execute changes
+            // sync.
+            mBinding.executePendingBindings()
+        })
     }
 }
 
