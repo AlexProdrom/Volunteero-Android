@@ -13,14 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ProgressBar
-            android:id="@+id/login_progress"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="8dp"
-            app:visibleGone="@{isLoading}" />
-
         <ScrollView
             android:id="@+id/login_form"
             android:layout_width="match_parent"
@@ -32,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/rv_content_description"
                 app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-                app:visibleGone="@{!isLoading}" />
+                app:visibleGone="@{isLoading}" />
         </ScrollView>
     </android.support.constraint.ConstraintLayout>
 </layout>

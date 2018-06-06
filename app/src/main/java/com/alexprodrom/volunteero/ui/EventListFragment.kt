@@ -5,11 +5,13 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.BindingAdapter
 import android.databinding.DataBindingUtil
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import com.alexprodrom.volunteero.R
 import com.alexprodrom.volunteero.databinding.EventListFragmentBinding
 import com.alexprodrom.volunteero.model.Event
@@ -46,10 +48,10 @@ class EventListFragment : Fragment() {
     private fun subscribeUi(viewModel: EventListViewModel) {
         viewModel.getEvents().observe(this, Observer<List<Event>> { events ->
             if (events != null) {
-                mBinding?.setIsLoading(false)
+                mBinding?.isLoading = false
                 (rvEvents.adapter as EventAdapter).addEvents(events)
             } else {
-                mBinding?.setIsLoading(true)
+                mBinding?.isLoading = true
             }
             mBinding?.executePendingBindings()
         })
@@ -58,5 +60,5 @@ class EventListFragment : Fragment() {
 
 @BindingAdapter("visibleGone")
 fun showHide(view: View, show: Boolean) {
-    view.visibility = if (show) View.VISIBLE else View.GONE
+    view.visibility = if (show) View.GONE else View.VISIBLE
 }
