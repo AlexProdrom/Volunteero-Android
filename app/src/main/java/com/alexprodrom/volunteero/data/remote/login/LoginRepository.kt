@@ -1,43 +1,48 @@
 package com.alexprodrom.volunteero.data.remote.login
 
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
+import com.alexprodrom.volunteero.model.ServerResponse
 import retrofit2.Retrofit
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 
 class LoginRepository {
 
-    fun loginPost(username: String, password: String) {
+    private val loginApi: LoginApi
 
-        //Here a logging interceptor is created
+    init {
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
 
-        //The logging interceptor will be added to the http client
         val httpClient = OkHttpClient.Builder()
         httpClient.addInterceptor(logging)
 
-        //The Retrofit builder will have the client attached, in order to get connection logs
         val retrofit = Retrofit.Builder()
                 .client(httpClient.build())
                 .addConverterFactory(MoshiConverterFactory.create())
                 .baseUrl("https://volunteero-events.herokuapp.com")
                 .build()
-        val service = retrofit.create(Interface::class.java!!)
 
-        val call = service.post("login", username, password)
+        loginApi = retrofit.create(LoginApi::class.java)
+    }
 
-        call.enqueue(object : Callback<ServerResponse>() {
-            fun onResponse(call: Call<ServerResponse>, response: Response<ServerResponse>) {
-                BusProvider.getInstance().post(ServerEvent(response.body()))
-                Log.e(TAG, "Success")
+    fun loginPost(username: String, password: String): LiveData<ServerResponse> {
+        val data = MutableLiveData<ServerResponse>()
+        loginApi.post(username, password).enqueue(object : Callback<ServerResponse> {
+            override fun onResponse(call: Call<ServerResponse>?, response: Response<ServerResponse>?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-            fun onFailure(call: Call<ServerResponse>, t: Throwable) {
-                // handle execution failures like no internet connectivity
-                BusProvider.getInstance().post(ErrorEvent(-2, t.message))
+            override fun onFailure(call: Call<ServerResponse>?, t: Throwable?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
         })
+        return data
     }
 }

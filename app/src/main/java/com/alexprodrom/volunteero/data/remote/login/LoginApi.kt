@@ -1,5 +1,6 @@
 package com.alexprodrom.volunteero.data.remote.login
 
+import com.alexprodrom.volunteero.model.ServerResponse
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.POST
