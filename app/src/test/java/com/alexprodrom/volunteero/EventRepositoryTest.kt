@@ -1,7 +1,6 @@
 package com.alexprodrom.volunteero
 
-import android.arch.lifecycle.LiveData
-import com.alexprodrom.volunteero.data.api.EventRepository
+import com.alexprodrom.volunteero.data.remote.event.EventRepository
 import com.alexprodrom.volunteero.model.Event
 import org.hamcrest.CoreMatchers.*
 import org.hamcrest.MatcherAssert.assertThat

@@ -1,4 +1,4 @@
-package com.alexprodrom.volunteero.data.api
+package com.alexprodrom.volunteero.data.remote.event
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
@@ -8,11 +8,10 @@ import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.Response
-import javax.inject.Inject
 
 class EventRepository {
 
-    private val volunteeroApi: VolunteeroApi
+    private val eventApi: EventApi
 
     init {
         val retrofit = Retrofit.Builder()
@@ -20,12 +19,12 @@ class EventRepository {
                 .addConverterFactory(MoshiConverterFactory.create())
                 .build()
 
-        volunteeroApi = retrofit.create(VolunteeroApi::class.java)
+        eventApi = retrofit.create(EventApi::class.java)
     }
 
     fun getEvents(): LiveData<List<Event>> {
         val data = MutableLiveData<List<Event>>()
-        volunteeroApi.getEvents().enqueue(object : Callback<List<Event>> {
+        eventApi.getEvents().enqueue(object : Callback<List<Event>> {
             override fun onResponse(call: Call<List<Event>>, response: Response<List<Event>>) {
                 data.setValue(response.body())
             }
