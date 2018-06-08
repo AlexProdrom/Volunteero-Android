@@ -23,8 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/rv_content_description"
-                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-                app:visibleGone="@{isLoading}" />
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
         </ScrollView>
     </android.support.constraint.ConstraintLayout>
 </layout>

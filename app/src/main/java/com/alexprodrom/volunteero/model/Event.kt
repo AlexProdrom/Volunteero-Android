@@ -1,7 +1,9 @@
 package com.alexprodrom.volunteero.model
 
 import com.squareup.moshi.Json
+import org.parceler.Parcel
 
+@Parcel(Parcel.Serialization.BEAN)
 data class Event(@Json(name = "_id") val id: String = "",
                  val name: String = "",
                  val description: String = "",

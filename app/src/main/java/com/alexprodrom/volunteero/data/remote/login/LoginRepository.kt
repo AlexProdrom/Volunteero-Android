@@ -11,12 +11,12 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-
 class LoginRepository {
 
     private val loginApi: LoginApi
 
     init {
+        // TODO: check what is the logging used for
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
 
@@ -34,6 +34,8 @@ class LoginRepository {
 
     fun loginPost(username: String, password: String): LiveData<ServerResponse> {
         val data = MutableLiveData<ServerResponse>()
+        loginApi.post(username, password).execute()
+        /*
         loginApi.post(username, password).enqueue(object : Callback<ServerResponse> {
             override fun onResponse(call: Call<ServerResponse>?, response: Response<ServerResponse>?) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -43,6 +45,7 @@ class LoginRepository {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
         })
+        */
         return data
     }
 }

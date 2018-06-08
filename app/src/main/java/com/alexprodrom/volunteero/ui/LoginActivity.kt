@@ -26,13 +26,8 @@ import android.content.Intent
 import com.alexprodrom.volunteero.R
 import kotlinx.android.synthetic.main.activity_login.*
 
-/**
- * A login screen that offers login via email/password.
- */
 class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
+
     private var mAuthTask: UserLoginTask? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
