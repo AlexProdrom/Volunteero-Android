@@ -9,7 +9,6 @@ import com.alexprodrom.volunteero.utils.inflate
 import kotlinx.android.synthetic.main.event_card_view.view.*
 import kotlin.collections.ArrayList
 
-
 class EventAdapter(val eventOnClickCallback: EventClickCallback) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     val items = ArrayList<Event>()

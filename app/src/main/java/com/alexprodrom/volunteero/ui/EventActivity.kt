@@ -14,9 +14,6 @@ class EventActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             val fragment = EventListFragment()
-
-
-            Log.d("Lifecycle error", "create eventListFragment")
             supportFragmentManager.beginTransaction().add(R.id.fragment_container_event, fragment).commit()
         }
     }

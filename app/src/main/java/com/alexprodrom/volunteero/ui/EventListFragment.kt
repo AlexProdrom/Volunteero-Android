@@ -20,7 +20,6 @@ import com.alexprodrom.volunteero.model.Event
 import com.alexprodrom.volunteero.viewmodel.EventListViewModel
 import kotlinx.android.synthetic.main.event_list_fragment.*
 
-
 class EventListFragment : Fragment() {
 
     private var mBinding: EventListFragmentBinding? = null
@@ -66,6 +65,7 @@ class EventListFragment : Fragment() {
     }
 }
 
+// TODO: see what to do with this thing
 @BindingAdapter("visibleGone")
 fun showHide(view: View, show: Boolean) {
     view.visibility = if (show) View.GONE else View.VISIBLE

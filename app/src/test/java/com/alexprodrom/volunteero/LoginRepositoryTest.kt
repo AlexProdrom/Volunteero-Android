@@ -7,7 +7,7 @@ import org.hamcrest.MatcherAssert
 import org.junit.Before
 import org.junit.Test
 
-class LoginRepositoryTest{
+class LoginRepositoryTest {
     lateinit var loginRepository: LoginRepository
 
     @Before
