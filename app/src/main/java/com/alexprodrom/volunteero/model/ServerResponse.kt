@@ -1,5 +1,4 @@
 package com.alexprodrom.volunteero.model
 
 
-class ServerResponse {
-}
+data class ServerResponse(val accessToken: String, )
