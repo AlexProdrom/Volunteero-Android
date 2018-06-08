@@ -9,7 +9,7 @@ import retrofit2.http.FormUrlEncoded
 interface LoginApi {
 
     @FormUrlEncoded
-    @POST("https://volunteero-auth.herokuapp.com/auth")
+    @POST("/auth/login")
     fun post(@Field("username") username: String,
              @Field("password") password: String
     ): Call<ServerResponse>
