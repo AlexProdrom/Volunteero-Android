@@ -20,8 +20,10 @@ class EventFragment : Fragment() {
         val event: Event = Parcels.unwrap(arguments!!.getParcelable(KEY_EVENT));
         binding.event = event
 
-        binding.tvEventLocation.setCompoundDrawablesWithIntrinsicBounds(android.R.drawable.ic_menu_mylocation, 0, 0, 0)
-
+        binding.tvEventLocation.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_place_24dp, 0, 0, 0)
+        binding.tvEventDate.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_date_range_24dp, 0, 0, 0)
+        binding.tvEventVolunteers.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_account_circle_24dp, 0, 0, 0)
+        binding.tvEventPoints.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_points_24dp, 0, 0, 0)
         return binding.root
     }
 

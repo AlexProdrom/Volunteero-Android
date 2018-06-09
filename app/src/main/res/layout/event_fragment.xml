@@ -9,120 +9,128 @@
             type="com.alexprodrom.volunteero.model.Event" />
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/iv_event_image"
-            android:layout_width="wrap_content"
-            android:layout_height="146dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/colorImageBackground"
-            android:contentDescription="@string/cv_image_description"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_volunteero_text_logo" />
-
-        <TextView
-            android:id="@+id/tv_event_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="24dp"
-            android:text="@{event.name}"
-            android:textColor="#000"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_event_image" />
-
-        <TextView
-            android:id="@+id/tv_event_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
-            android:text="@{`Category: ` + event.category}"
-            android:textColor="#000"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_event_title" />
-
-        <View
-            android:id="@+id/view1"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_event_category" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_event_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@{`From ` + event.start + ` until ` + event.end}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view1" />
+            <ImageView
+                android:id="@+id/iv_event_image"
+                android:layout_width="wrap_content"
+                android:layout_height="146dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorImageBackground"
+                android:contentDescription="@string/cv_image_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_volunteero_text_logo" />
 
-        <TextView
-            android:id="@+id/tv_event_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@{event.location}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_event_date" />
+            <TextView
+                android:id="@+id/tv_event_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:text="@{event.name}"
+                android:textColor="#000"
+                android:textSize="35sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_event_image" />
 
-        <TextView
-            android:id="@+id/tv_event_volunteers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@{`Volunteers: ` + event.volunteers}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_event_location" />
+            <TextView
+                android:id="@+id/tv_event_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:text="@{`Category: ` + event.category}"
+                android:textColor="#000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event_title" />
 
-        <TextView
-            android:id="@+id/tv_event_points"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@{`Volunteering points: ` + event.points}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_event_volunteers" />
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event_category" />
 
-        <View
-            android:id="@+id/view2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_event_points" />
+            <TextView
+                android:id="@+id/tv_event_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{` From ` + event.start + ` until ` + event.end}"
+                android:textSize="@dimen/event_text_field"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="356dp"
-            android:layout_height="65dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@{event.description}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view2" />
+            <TextView
+                android:id="@+id/tv_event_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{` `+ event.location}"
+                android:textSize="@dimen/event_text_field"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event_date" />
 
-    </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_event_volunteers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{` Volunteers: ` + event.volunteers}"
+                android:textSize="@dimen/event_text_field"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event_location" />
+
+            <TextView
+                android:id="@+id/tv_event_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{` Volunteering points: ` + event.points}"
+                android:textSize="@dimen/event_text_field"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event_volunteers" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event_points" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="356dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{event.description}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 </layout>
