@@ -21,7 +21,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                android:background="@color/colorCardViewBackground"
+                android:background="@color/colorImageBackground"
                 android:contentDescription="@string/cv_image_description"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_volunteero_text_logo" />

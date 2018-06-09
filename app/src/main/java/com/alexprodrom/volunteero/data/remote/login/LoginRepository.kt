@@ -26,7 +26,7 @@ class LoginRepository {
         val retrofit = Retrofit.Builder()
                 .client(httpClient.build())
                 .addConverterFactory(MoshiConverterFactory.create())
-                .baseUrl("https://volunteero-events.herokuapp.com")
+                .baseUrl("https://volunteero-auth.herokuapp.com")
                 .build()
 
         loginApi = retrofit.create(LoginApi::class.java)
@@ -34,18 +34,17 @@ class LoginRepository {
 
     fun loginPost(username: String, password: String): LiveData<ServerResponse> {
         val data = MutableLiveData<ServerResponse>()
-        loginApi.post(username, password).execute()
-        /*
         loginApi.post(username, password).enqueue(object : Callback<ServerResponse> {
             override fun onResponse(call: Call<ServerResponse>?, response: Response<ServerResponse>?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                if (response != null) {
+                    data.value = response.body()
+                }
             }
 
             override fun onFailure(call: Call<ServerResponse>?, t: Throwable?) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
         })
-        */
         return data
     }
 }

@@ -18,5 +18,6 @@ class LoginRepositoryTest {
     @Test
     fun shouldGetEventsFromApi() {
         val response = loginRepository.loginPost("liisu", "11qqaa!!QQAA")
+        val g = response.value
     }
 }

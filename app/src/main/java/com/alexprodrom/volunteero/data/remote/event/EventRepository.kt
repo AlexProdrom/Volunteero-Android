@@ -26,7 +26,7 @@ class EventRepository {
         val data = MutableLiveData<List<Event>>()
         eventApi.getEvents().enqueue(object : Callback<List<Event>> {
             override fun onResponse(call: Call<List<Event>>, response: Response<List<Event>>) {
-                data.setValue(response.body())
+                data.value = response.body()
             }
 
             override fun onFailure(call: Call<List<Event>>?, t: Throwable?) {
