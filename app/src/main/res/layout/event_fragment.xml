@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="@{`Volunteering points:` + event.points}"
+            android:text="@{`Volunteering points: ` + event.points}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_event_volunteers" />
 
