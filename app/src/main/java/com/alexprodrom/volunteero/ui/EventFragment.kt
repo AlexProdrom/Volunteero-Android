@@ -13,10 +13,15 @@ import org.parceler.Parcels
 
 class EventFragment : Fragment() {
 
+    private var mBinding: EventFragmentBinding? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding: EventFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.event_fragment, container, false)
         val event: Event = Parcels.unwrap(arguments!!.getParcelable(KEY_EVENT));
         binding.event = event
+
+        binding.tvEventLocation.setCompoundDrawablesWithIntrinsicBounds(android.R.drawable.ic_menu_mylocation, 0, 0, 0)
+
         return binding.root
     }
 
