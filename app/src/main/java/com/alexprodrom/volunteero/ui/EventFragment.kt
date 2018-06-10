@@ -16,7 +16,7 @@ class EventFragment : Fragment() {
     private var mBinding: EventFragmentBinding? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        //val binding: EventFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.event_fragment, container, false)
+        val binding: EventFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.event_fragment, container, false)
         val event: Event = Parcels.unwrap(arguments!!.getParcelable(KEY_EVENT));
         binding.event = event
 
