@@ -1,8 +1,7 @@
 <resources>
     <!-- TODO: Generalize the dimensions -->
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="general_view_margin">16dp</dimen>
+    <dimen name="general_view_margin2">12dp</dimen>
 
     <dimen name="event_text_field">18sp</dimen>
 </resources>
