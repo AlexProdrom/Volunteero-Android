@@ -3,8 +3,8 @@ package com.alexprodrom.volunteero.viewmodel
 import android.arch.lifecycle.ViewModel
 import com.alexprodrom.volunteero.model.User
 
-
-class LoginViewModel: ViewModel() {
+// TODO: to implement login functionality
+class LoginViewModel : ViewModel() {
     private var userId: String? = null
     private val user: User? = null
 
@@ -15,5 +15,4 @@ class LoginViewModel: ViewModel() {
     fun getUser(): User? {
         return user
     }
-
 }

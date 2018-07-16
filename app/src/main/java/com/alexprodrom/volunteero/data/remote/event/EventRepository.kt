@@ -5,9 +5,9 @@ import android.arch.lifecycle.MutableLiveData
 import com.alexprodrom.volunteero.model.Event
 import retrofit2.Call
 import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.Response
 
 class EventRepository {
 
@@ -30,7 +30,7 @@ class EventRepository {
             }
 
             override fun onFailure(call: Call<List<Event>>?, t: Throwable?) {
-                //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                // TODO: to implement
             }
         })
         return data
