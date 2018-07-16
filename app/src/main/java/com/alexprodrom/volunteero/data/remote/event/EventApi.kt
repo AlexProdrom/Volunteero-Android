@@ -4,7 +4,6 @@ import com.alexprodrom.volunteero.model.Event
 import retrofit2.Call
 import retrofit2.http.GET
 
-
 interface EventApi {
 
     @GET("/events")

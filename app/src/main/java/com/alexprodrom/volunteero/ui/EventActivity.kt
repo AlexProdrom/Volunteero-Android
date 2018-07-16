@@ -1,8 +1,7 @@
 package com.alexprodrom.volunteero.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.support.v7.app.AppCompatActivity
 import com.alexprodrom.volunteero.R
 import com.alexprodrom.volunteero.model.Event
 

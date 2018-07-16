@@ -13,5 +13,5 @@ data class Event(@Json(name = "_id") val id: String = "",
                  val volunteers: Int = 0,
                  val category: String = "",
                  val points: Int = 0,
-                 val organizationId: String = "", // needs mapping
+                 val organizationId: String = "",
                  val available: Boolean = false)

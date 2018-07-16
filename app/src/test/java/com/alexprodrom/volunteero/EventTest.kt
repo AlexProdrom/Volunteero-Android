@@ -11,19 +11,17 @@ import org.junit.runner.RunWith
 @RunWith(JUnitParamsRunner::class)
 class EventTest {
 
-    // JUnitParams method
     fun getEvents() = arrayOf(
-            arrayOf("id1", "Saving pandas", "To save pandas all around the world", "20.04.2018","20.04.2018", "Eindhoven", 4392, "animals", 100, "3", true),
-            arrayOf("id2", "Panda saving", "Let's save these pandas!", "20.04.2018","20.04.2018", "Berlin", 504, "animals", 100, "1", false),
-            arrayOf("id3", "Tigers saving", "Let's save these tigers!", "20.04.2018","20.04.2018", "Paris", 22, "animals", 100, "2", false))
+            arrayOf("id1", "Saving pandas", "To save pandas all around the world", "20.04.2018", "20.04.2018", "Eindhoven", 4392, "animals", 100, "3", true),
+            arrayOf("id2", "Panda saving", "Let's save these pandas!", "20.04.2018", "20.04.2018", "Berlin", 504, "animals", 100, "1", false),
+            arrayOf("id3", "Tigers saving", "Let's save these tigers!", "20.04.2018", "20.04.2018", "Paris", 22, "animals", 100, "2", false))
 
     @Test
     @Parameters(method = "getEvents")
-    fun constructorShouldSetFields(id:String, name: String, description: String, start: String, end:
-            String, location: String, volunteers: Int, category: String, points:Int, orgId: String, available: Boolean) {
+    fun constructorShouldSetFields(id: String, name: String, description: String, start: String, end:
+    String, location: String, volunteers: Int, category: String, points: Int, orgId: String, available: Boolean) {
         val event = Event(id, name, description, start, end, location, volunteers, category, points, orgId, available)
 
-        // Hamcrest usage
         assertThat(event.name, `is`(name))
         assertThat(event.description, `is`(description))
         assertThat(event.location, `is`(location))
@@ -51,6 +49,6 @@ class EventTest {
     fun constructorShouldWorkEmpty() {
         val event = Event()
 
-        assertThat(event,`is`(notNullValue()))
+        assertThat(event, `is`(notNullValue()))
     }
 }

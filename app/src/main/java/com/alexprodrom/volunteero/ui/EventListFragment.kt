@@ -1,24 +1,19 @@
 package com.alexprodrom.volunteero.ui
 
 import android.arch.lifecycle.Lifecycle
-import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.BindingAdapter
 import android.databinding.DataBindingUtil
-import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import com.alexprodrom.volunteero.R
 import com.alexprodrom.volunteero.databinding.EventListFragmentBinding
 import com.alexprodrom.volunteero.model.Event
 import com.alexprodrom.volunteero.viewmodel.EventListViewModel
-import kotlinx.android.synthetic.main.event_list_fragment.*
 
 class EventListFragment : Fragment() {
 
