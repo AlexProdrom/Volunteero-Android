@@ -6,8 +6,6 @@
 Android app belonging to the [Volunteero](https://github.com/Volunteero) platform. It should provide a conceptual idea of the Volunteero Android application.
 
 The app consumes the [events-service](https://volunteero-events.herokuapp.com/) provided by the platform, listing all the available events and their details.
-
-During this project, we implemented MVVM, which was new for all of us, so there is of course room for improvement :smiley: .
 ## Installation
 
 The app can currently be downloaded only by using the Android Studio's functionality to generate the APK when running the project.
@@ -24,7 +22,7 @@ The app can currently be downloaded only by using the Android Studio's functiona
 
 * [Kotlin](https://kotlinlang.org/)
 
-* [Android Jetpack](https://developer.android.com/jetpack/)(Data Binding, LiveData, Lifecycles)
+* [Android Jetpack](https://developer.android.com/jetpack/)(MVVM, Data Binding, LiveData, Lifecycles)
 
 * [Retrofit](https://square.github.io/retrofit/)
 
